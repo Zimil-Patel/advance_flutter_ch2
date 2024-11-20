@@ -15,7 +15,9 @@ class Chapter2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => UserApiProvider(),),
+        ChangeNotifierProvider(
+          create: (context) => UserApiProvider(),
+        ),
       ],
       builder: (context, child) {
         return const MaterialApp(
