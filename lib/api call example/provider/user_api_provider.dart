@@ -11,9 +11,9 @@ class UserApiProvider extends ChangeNotifier{
 
   //FETCH API DATA USING API HELPER CLASS
   Future<void> fetchUserApiRecords() async {
-    ApiHelper apiHelper = ApiHelper();
     try {
-      String response = await apiHelper.callApi('https://jsonplaceholder.typicode.com/users');
+      log("user fetch called ---------------");
+      String response = await ApiHelper.apiHelper.callApi('https://jsonplaceholder.typicode.com/users');
       if (response.isNotEmpty){
         List<dynamic> jsonData = jsonDecode(response);
         userList = jsonData.map((e) => User.fromJson(e)).toList();
@@ -24,11 +24,4 @@ class UserApiProvider extends ChangeNotifier{
     }
   }
 
-  UserApiProvider(){
-    _init();
-  }
-
-  void _init(){
-    fetchUserApiRecords();
-  }
 }

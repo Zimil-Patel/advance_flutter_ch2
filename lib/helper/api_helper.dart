@@ -5,6 +5,11 @@ import 'package:http/http.dart' as http;
 
 class ApiHelper {
 
+  ApiHelper._instance();
+
+  // SINGLETON OBJECT
+  static ApiHelper apiHelper = ApiHelper._instance();
+
   // FINAL STRING API VARIABLE
   String api = "";
 
