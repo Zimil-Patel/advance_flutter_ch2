@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UserProfileCircle extends StatelessWidget {
   const UserProfileCircle({
-    super.key, required this.url,
+    super.key,
+    required this.url,
   });
 
   final String url;
@@ -32,9 +32,13 @@ class UserProfileCircle extends StatelessWidget {
           color: Colors.white,
           shape: BoxShape.circle,
         ),
+
+        //  USER PROFILE IMAGE
         child: CircleAvatar(
           backgroundColor: Colors.grey,
-          backgroundImage: NetworkImage(url),
+          backgroundImage: url.isNotEmpty
+              ? NetworkImage(url)
+              : const AssetImage('assets/images/user.png'),
         ),
       ),
     );

@@ -1,6 +1,6 @@
 class PixabayModel {
   final int id, views, downloads, comments, likes, userId;
-  final String largeImageURL, userImageURL, user;
+  final String largeImageURL, userImageURL, user, tags;
 
   PixabayModel({
     required this.id,
@@ -12,6 +12,7 @@ class PixabayModel {
     required this.largeImageURL,
     required this.user,
     required this.userId,
+    required this.tags,
   });
 
   factory PixabayModel.fromJson(Map map) => PixabayModel(
@@ -24,5 +25,6 @@ class PixabayModel {
         largeImageURL: map['largeImageURL'],
         user: map['user'],
         userId: map['user_id'],
+        tags: map['tags'],
       );
 }
